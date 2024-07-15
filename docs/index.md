@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Note"
   text: "A Note For Me"
-  tagline: My great project tagline
+  tagline: Dnzzk2's Note For Study And Other Field
   actions:
     - theme: brand
       text: Markdown Examples
@@ -22,4 +22,3 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-
