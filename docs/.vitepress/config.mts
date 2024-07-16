@@ -3,7 +3,7 @@ import { defineConfig } from "vitepress";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Note",
-  description: "A Note For Me",
+  description: "A Note For Dnzzk2",
   head: [
     // 添加一个链接到你的favicon图标
     ["link", { rel: "icon", href: "/logo.png" }],
@@ -14,22 +14,23 @@ export default defineConfig({
     logo: "/logo.png",
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: "Home", link: "/" },
-      { text: "Examples", link: "/markdown-examples" },
+      { text: "知识", link: "/knowLedge" },
+      { text: "CSS收录", link: "/markdown-examples" },
     ],
 
     sidebar: [
       {
         text: "Examples",
-        items: [
-          { text: "Markdown Examples", link: "/markdown-examples" },
-          { text: "Runtime API Examples", link: "/api-examples" },
-        ],
       },
     ],
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/vuejs/vitepress" },
+      { icon: "github", link: "https://github.com/Dnzzk2/note.dnzzk2.cn" },
     ],
+
+    footer: {
+      message: "Crafted with care.",
+      copyright: "Copyright © 2024-present Dnzzk2",
+    },
   },
 });
