@@ -45,5 +45,12 @@ export default defineConfig({
       message: "Crafted with care.",
       copyright: "Copyright © 2024-present Dnzzk2",
     },
+    lastUpdated: {
+      text: "最后更新于",
+      formatOptions: {
+        dateStyle: "short",
+        timeStyle: "short",
+      },
+    },
   },
 });
