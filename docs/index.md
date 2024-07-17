@@ -1,6 +1,7 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
+footer: false
 
 hero:
   name: "Note"
@@ -12,8 +13,7 @@ hero:
   actions:
     - theme: brand
       text: 进入我的世界
-      link: /markdown-examples
-
+      link: /workflow/vscode/setting
 
 features:
   - title: 记录知识
