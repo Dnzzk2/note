@@ -30,13 +30,19 @@ export default defineConfig({
       ],
       "/workflow": [
         {
-          text: "Vscode",
-          items: [{ text: "Vscode配置", link: "/workflow/vscode/setting" }],
+          text: "Visual Studio Code",
+          items: [
+            {
+              text: "Visual Studio Code 配置",
+              link: "/workflow/vscode/setting",
+            },
+          ],
         },
       ],
     },
     outline: {
       label: "页面导航",
+      level: [2, 3],
     },
     socialLinks: [
       { icon: "github", link: "https://github.com/Dnzzk2/note.dnzzk2.cn" },
