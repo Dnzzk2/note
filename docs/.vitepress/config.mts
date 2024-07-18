@@ -17,12 +17,12 @@ export default defineConfig({
         text: "WorkFlow",
         items: [{ text: "Vscode配置", link: "/workflow/vscode/setting" }],
       },
-      { text: "CSS收录", link: "/collection-css/luminous-corner" },
+      { text: "Cascading Style Sheets", link: "/collection-css/luminous-corner" },
     ],
     sidebar: {
       "/collection-css": [
         {
-          text: "CSS收录",
+          text: "Cascading Style Sheets",
           items: [
             { text: "发光边角", link: "/collection-css/luminous-corner" },
           ],
@@ -57,6 +57,10 @@ export default defineConfig({
         dateStyle: "short",
         timeStyle: "short",
       },
+    },
+    editLink: {
+      pattern: "https://github.com/Dnzzk2/note.dnzzk2.cn/edit/main/docs/:path",
+      text:"在 Github 上编辑此页面"
     },
   },
 });
