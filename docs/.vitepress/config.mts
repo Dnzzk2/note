@@ -17,7 +17,14 @@ export default defineConfig({
         text: "WorkFlow",
         items: [{ text: "Vscode配置", link: "/workflow/vscode/setting" }],
       },
-      { text: "Cascading Style Sheets", link: "/collection-css/luminous-corner" },
+      {
+        text: "Cascading Style Sheets",
+        link: "/collection-css/luminous-corner",
+      },
+      {
+        text: "框架",
+        items: [{ text: "React", link: "/framework/React/hooks" }],
+      },
     ],
     sidebar: {
       "/collection-css": [
@@ -35,6 +42,17 @@ export default defineConfig({
             {
               text: "Visual Studio Code 配置",
               link: "/workflow/vscode/setting",
+            },
+          ],
+        },
+      ],
+      "/framework/React": [
+        {
+          text: "React",
+          items: [
+            {
+              text: "React中常见的Hooks",
+              link: "/framework/React/hooks",
             },
           ],
         },
@@ -60,7 +78,7 @@ export default defineConfig({
     },
     editLink: {
       pattern: "https://github.com/Dnzzk2/note.dnzzk2.cn/edit/main/docs/:path",
-      text:"在 Github 上编辑此页面"
+      text: "在 Github 上编辑此页面",
     },
   },
 });
