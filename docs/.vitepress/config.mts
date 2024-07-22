@@ -54,6 +54,10 @@ export default defineConfig({
               text: "React中常见的Hooks",
               link: "/framework/React/hooks",
             },
+            {
+              text: "React中的TypeScript",
+              link: "/framework/React/type-in-react",
+            },
           ],
         },
       ],

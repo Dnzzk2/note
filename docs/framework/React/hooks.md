@@ -1,3 +1,38 @@
+---
+description: 深入解析 React Hooks，包括 useState、useEffect、useLayoutEffect、useReducer、useRef、useContext、memo、useMemo 和 useCallback。学习如何在 React 应用中管理状态、处理副作用和优化性能。
+head:
+  - - meta
+    - name: keywords
+      content: React Hooks, useState, useEffect, useLayoutEffect, useReducer, useRef, useContext, memo, useMemo, useCallback, React 性能优化
+  - - meta
+    - name: author
+      content: Dnzzk2
+  - - meta
+    - name: copyright
+      content: © 2024 note.dnzzk2.icu
+  - - link
+    - rel: canonical
+      content: https://note.dnzzk2.icu/framework/React/hooks
+  - - meta
+    - property: og:type
+      content: article
+  - - meta
+    - property: og:title
+      content: React 中常见的 Hooks
+  - - meta
+    - property: og:description
+      content: 深入解析 React Hooks，包括 useState、useEffect、useLayoutEffect、useReducer、useRef、useContext、memo、useMemo 和 useCallback。学习如何在 React 应用中管理状态、处理副作用和优化性能。
+  - - meta
+    - property: og:image
+      content: https://note.dnzzk2.icu/logo.png
+  - - meta
+    - property: og:url
+      content: https://note.dnzzk2.icu/framework/React/hooks
+  - - meta
+    - property: og:site_name
+      content: Note
+---
+
 # React 中常见的 Hooks
 
 ## useState
