@@ -253,7 +253,7 @@ const Son: React.ForwardRefRenderFunction<HTMLInputElement> = (props, ref) => {
   );
 };
 
-const Father = React.forwardRef(Son);
+const NewSon = React.forwardRef(Son);
 
 function App() {
   const ref = useRef<HTMLInputElement>(null);
@@ -265,13 +265,36 @@ function App() {
 
   return (
     <div className="App">
-      <Father ref={ref} />
+      <NewSon ref={ref} />
     </div>
   );
 }
 
 export default App;
 ```
+
+::: tip
+forwardRef 的解释
+
+forwardRef 允许组件使用 ref 将 DOM 节点暴露给父组件。
+
+forwardRef 接受一个渲染函数作为参数。React 将会使用 props 和 ref 调用此函数：
+
+```jsx
+const MyInput = forwardRef(function MyInput(props, ref) {
+  return (
+    <label>
+      {props.label}
+      <input ref={ref} />
+    </label>
+  );
+});
+```
+
+其实是将 MyInput 组件，通过 forwardRef，弄一个新的 MyInput，新的 MyInput，可以将 ref 传递给原来的 MyInput，原来的 MyInput，会在 props 之后收到一个新的参数为 ref，然后我们可以将其传递给需要暴露的 DOM 节点，或者传递到 `useImperativeHandle`
+
+详解：[forward — React 中文文档](https://react.docschina.org/reference/react/forwardRef)
+:::
 
 ### **useImperativeHandle**
 

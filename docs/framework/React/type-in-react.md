@@ -6,9 +6,9 @@ description: React中的TypeScript类型
 
 ## 描述 JSX 的类型
 
-使用 `React.ReactElement`描述 JSX 的类型，如果传过来的不一定是组件也可能是`number`或是`null`，则使用 React.ReactNode。
+使用 `React.ReactElement`描述 JSX 的类型，如果传过来的不一定是组件也可能是`number`或是`null`，则使用 `React.ReactNode`。
 
-ReactNode 包含 ReactElement、或者 number、string、null、boolean 等可以写在 JSX 里的类型。
+`ReactNode` 包含 `ReactElement`、或者 `number`、`string`、`null`、`boolean` 等可以写在 JSX 里的类型。
 
 ```ts
 type ReactNode =
@@ -24,9 +24,9 @@ type ReactNode =
     keyof DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_REACT_NODES];
 ```
 
-ReactNode > ReactElement > JSX.Element
+`ReactNode` > `ReactElement` > `JSX.Element`
 
-一般情况下，描述一个 JSX 类型，使用 React.ReactNode
+一般情况下，描述一个 JSX 类型，使用 `React.ReactNode`
 
 ## 函数组件的类型
 
@@ -40,13 +40,13 @@ ReactNode > ReactElement > JSX.Element
 
 ### useRef
 
-- 保存 DOM 引用，参数传 null，ref.current 只读
+- 保存 DOM 引用，参数传 `null`，ref.current 只读
 
 ```tsx
 const ref = useRef<HTMLDivElement>(null);
 ```
 
-- 数据，参数不传 null
+- 数据，参数不传 `null`
 
 ```tsx
 const ref = useRef<{ num: number }>({ num: 1 });
@@ -137,6 +137,10 @@ useImperativeHandle < GuangRef,
       [inputRef]);
 ```
 
+::: tip
+如有疑惑，请跳转至 [useRef — React 中常见的 Hooks](../React/hooks.md#ref-从子组件传到父组件) 查看基础知识，理解 `forward`。
+:::
+
 ### useReducer
 
 `useReducer<Reducer<Data,Action>,string>>`，可以传一个参数类型也可以传两个参数类型
@@ -147,10 +151,36 @@ useImperativeHandle < GuangRef,
 
 ### useCallback
 
+`useCallback` 的类型参数是传入的函数的类型：
+
 ```tsx
 const fun = useCallback<() => number>(() => {
   return 1;
-});
+}, []);
 ```
 
 ### useMemo
+
+`useMemo` 的类型参数是传入的函数的返回值类型：
+
+```tsx
+const fun = useMemo<{ a: number }>(() => {
+  return { a: 1 };
+}, []);
+```
+
+### useContext
+
+`useContext` 的类型参数是 Context 内容的类型：
+
+```tsx
+const context = createContext(1);
+
+const num = useContext<number>(context);
+```
+
+## 参数类型
+
+### PropsWithChildren
+
+未完待续...
