@@ -12,6 +12,8 @@ export default defineConfig({
   ],
   themeConfig: {
     logo: "/logo.png",
+    lightModeSwitchTitle: "切换到暗黑模式",
+    darkModeSwitchTitle: "切换到明亮模式",
     nav: [
       {
         text: "WorkFlow",
