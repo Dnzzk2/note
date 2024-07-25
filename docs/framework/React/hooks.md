@@ -142,7 +142,7 @@ useLayoutEffect(effect, dependencies?)
 ![useEffect](../../img/useEffect.png)
 
 **useLayoutEffect 图解**
-![useEffect](../../img/useLayoutEffect.png)
+![useEffect](../../img/useLayoutEffect.jpg)
 
 ### 使用场景
 

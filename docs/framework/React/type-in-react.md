@@ -20,8 +20,7 @@ type ReactNode =
   | boolean
   | null
   | undefined
-  | DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_REACT_NODES[
-    keyof DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_REACT_NODES];
+  | DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_REACT_NODES[keyof DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_REACT_NODES];
 ```
 
 `ReactNode` > `ReactElement` > `JSX.Element`
@@ -182,5 +181,68 @@ const num = useContext<number>(context);
 ## 参数类型
 
 ### PropsWithChildren
+
+```tsx
+interface Props {
+  content: React.ReactNode;
+  children:React.ReactNode;
+}
+
+function A(props:Props)=>{
+  return <div>{props.content}{props.children}</div>
+}
+
+const B = ()=>{
+  return <A content={<div>123</div>}>
+            <div>children</div>
+         </div>
+}
+
+```
+
+children 类型的定义其实不需要自己写，可以使用`PropsWithChildren`
+
+```tsx
+type Props = PropsWithChildren<{content:React.ReactNode}>
+
+function A(props:Props)=>{
+  return <div>{props.content}{props.children}</div>
+}
+
+const B = ()=>{
+  return <A content={<div>123</div>}>
+            <div>children</div>
+         </div>
+}
+
+```
+
+`PropsWithChildren`的定义
+
+```ts
+type PropsWithChildren<P = unKnown> = P & { children?: ReactNode | undefined };
+```
+
+### CSSProperties
+
+通过 props 传递 css
+
+```tsx
+type Props = PropsWithChildren<{
+  content:React.ReactNode,
+  color:CSSProperties['color'],
+  styles?:CSSProperties
+  }>
+
+function A(props:Props)=>{
+  return <div>{props.content}{props.children}</div>
+}
+
+const B = ()=>{
+  return <A content={<div>123</div>} color="" styles={{}}>
+            <div>children</div>
+         </div>
+}
+```
 
 未完待续...
