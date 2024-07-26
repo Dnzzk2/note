@@ -1,5 +1,21 @@
 ---
 description: React中的TypeScript类型
+head:
+  - - meta
+    - name: keywords
+      content: TypeScript,React,React中的ts。
+  - - link
+    - rel: canonical
+      content: https://note.dnzzk2.icu/framework/React/type-in-react
+  - - meta
+    - property: og:title
+      content: React中的TypeScript类型
+  - - meta
+    - property: og:description
+      content: 了解React中的TS类型，学会如何声明类型。
+  - - meta
+    - property: og:url
+      content: https://note.dnzzk2.icu/framework/React/type-in-react
 ---
 
 # React 中的 TypeScript 类型
@@ -20,7 +36,8 @@ type ReactNode =
   | boolean
   | null
   | undefined
-  | DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_REACT_NODES[keyof DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_REACT_NODES];
+  | DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_REACT_NODES[
+    keyof DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_REACT_NODES];
 ```
 
 `ReactNode` > `ReactElement` > `JSX.Element`
@@ -295,4 +312,58 @@ interface AnchorHTMLAttributes<T> extends HTMLAttributes<T> {
 
 ```
 
-未完待续...
+### ComponentProps
+
+`ComponentProps`，在类型参数中填写标签名，可以获取该标签的类型。
+
+```tsx
+interface Props extends ComponentProps<"a"> {}
+```
+
+### EventHandler
+
+组件中传递处理函数，如 handlerClick。
+
+```tsx
+interface Props {
+  handlerClick: MouseEventHandler;
+}
+
+const A = (props: Props) => {
+  return <div onClick={props.handlerClick}>123</div>;
+};
+
+const App = () => {
+  return (
+    <A
+      handlerClick={(e) => {
+        console.log(e);
+      }}
+    />
+  );
+};
+```
+
+这种参数就要用 xxxEventHandler 的类型，比如 `MouseEventHandler`、`ChangeEventHandler` 等，它的类型参数是元素的类型。
+
+不使用参数，也可以自己声明一个函数
+
+```tsx
+interface Props {
+  handlerClick: (e: MouseEvent<HTMLDivElement>) => void;
+}
+
+const A = (props: Props) => {
+  return <div onClick={props.handlerClick}>123</div>;
+};
+
+const App = () => {
+  return (
+    <A
+      handlerClick={(e) => {
+        console.log(e);
+      }}
+    />
+  );
+};
+```
