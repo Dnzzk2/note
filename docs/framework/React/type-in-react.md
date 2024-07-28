@@ -22,7 +22,7 @@ head:
 
 ## 描述 JSX 的类型
 
-使用 `React.ReactElement`描述 JSX 的类型，如果传过来的不一定是组件也可能是`number`或是`null`，则使用 `React.ReactNode`。
+使用 `React.ReactElement` 描述 JSX 的类型，如果传过来的不一定是组件也可能是 `number` 或是 `null` ，则使用 `React.ReactNode` 。
 
 `ReactNode` 包含 `ReactElement`、或者 `number`、`string`、`null`、`boolean` 等可以写在 JSX 里的类型。
 
@@ -131,6 +131,7 @@ export default App;
 ```
 
 `React.ForwardRefRenderFunction<ref,props>`
+
 `React.forwardRef<ref,props>`
 
 第一个参数是 ref 的内容类型，第二个是 props 的类型
@@ -234,7 +235,7 @@ const B = ()=>{
 
 ```
 
-`PropsWithChildren`的定义。
+`PropsWithChildren` 的定义。
 
 ```ts
 type PropsWithChildren<P = unKnown> = P & { children?: ReactNode | undefined };
@@ -264,7 +265,7 @@ const B = ()=>{
 
 ### HTMLAttributes
 
-通过继承`HTMLAttributes`，使组件获得 HTML 普通标签的提示。
+通过继承 `HTMLAttributes` ，使组件获得 HTML 普通标签的提示。
 
 ::: tip
 `Attributes` 是属性的意思。
@@ -292,9 +293,9 @@ function App() {
 export default App;
 ```
 
-`HTMLAttributes`中的`HTMLDivElement`参数，是 onClick、onMouseMove 等事件处理函数的类型参数。
+`HTMLAttributes` 中的 `HTMLDivElement` 参数，是 onClick、onMouseMove 等事件处理函数的类型参数。
 
-继承`HTMLAttributes`，只会有通用 HTML 属性，某些属性是某些标签特有的，我们可以指定他们的属性，如 `FormHTMLAttributes`、`AnchorHTMLAttributes`等。
+继承 `HTMLAttributes` ，只会有通用 HTML 属性，某些属性是某些标签特有的，我们可以指定他们的属性，如 `FormHTMLAttributes`、`AnchorHTMLAttributes` 等。
 
 下面是 `a` 标签特有的`href` 属性。
 

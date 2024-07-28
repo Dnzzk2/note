@@ -107,7 +107,7 @@ export default App;
 
 ## useLayoutEffect
 
-useLayoutEffect 是 React 提供的一个 Hook，它的函数签名与 useEffect 相同，但它在所有 DOM 变更之后同步调用 effect。
+`useLayoutEffect` 是 React 提供的一个 Hook，它的函数签名与 `useEffect` 相同，但它在所有 DOM 变更之后同步调用 effect。
 
 ```jsx
 useLayoutEffect(effect, dependencies?)
@@ -115,7 +115,7 @@ useLayoutEffect(effect, dependencies?)
 
 ### 执行时机
 
-要理解 `useLayoutEffect`，我们需要先了解 React 的渲染过程：
+要理解 `useLayoutEffect` ，我们需要先了解 React 的渲染过程：
 
 1. React 更新虚拟 DOM 并计算出需要进行的 DOM 操作。
 2. React 将这些操作应用到实际的 DOM。
