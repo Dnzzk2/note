@@ -12,7 +12,10 @@ export default defineConfig({
     ["meta", { name: "author", content: "Dnzzk2" }],
     ["meta", { name: "copyright", content: "© 2024 note.dnzzk2.icu" }],
     ["meta", { property: "og:type", content: "article" }],
-    ["meta", { property: "og:image", content: "https://note.dnzzk2.icu/logo.png" }],
+    [
+      "meta",
+      { property: "og:image", content: "https://note.dnzzk2.icu/logo.png" },
+    ],
     ["meta", { property: "og:site_name", content: "Note" }],
   ],
   themeConfig: {
@@ -55,7 +58,7 @@ export default defineConfig({
       ],
       "/framework/React": [
         {
-          text: "React",
+          text: "React通关秘籍",
           items: [
             {
               text: "React中常见的Hooks",
