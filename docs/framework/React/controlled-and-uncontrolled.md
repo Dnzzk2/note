@@ -1,5 +1,21 @@
 ---
 description: "受控模式与非受控模式的区别"
+head:
+  - - meta
+    - name: keywords
+      content: 受控模式与非受控模式的区别
+  - - link
+    - rel: canonical
+      content: https://note.dnzzk2.icu/framework/React/controlled-and-uncontrolled
+  - - meta
+    - property: og:title
+      content: 受控模式与非受控模式的区别
+  - - meta
+    - property: og:description
+      content: 受控模式与非受控模式的区别
+  - - meta
+    - property: og:url
+      content: https://note.dnzzk2.icu/framework/React/controlled-and-uncontrolled
 ---
 
 # 受控与非受控

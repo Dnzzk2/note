@@ -72,6 +72,10 @@ export default defineConfig({
               text: "受控与非受控",
               link: "/framework/React/controlled-and-uncontrolled",
             },
+            {
+              text: "迷你Calendar",
+              link: "/framework/React/mini-calendar",
+            },
           ],
         },
       ],
