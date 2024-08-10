@@ -3,7 +3,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "Note",
   description: "A Note For Dnzzk2",
-  lang: "zh-Hans",
+  lang: "zh-CN",
   cleanUrls: true,
   lastUpdated: true,
   head: [
@@ -19,6 +19,20 @@ export default defineConfig({
     ["meta", { property: "og:site_name", content: "Note" }],
   ],
   themeConfig: {
+    search: {
+      provider: "algolia",
+      options: {
+        appId: "HTWB9AR1CG",
+        apiKey: "09f0b05b5a00a9210f3816abccaad1cf",
+        indexName: "dnzzk2",
+        placeholder: "请输入关键词",
+        translations: {
+          button: {
+            buttonText: "请输入关键词",
+          },
+        },
+      },
+    },
     logo: "/logo.png",
     lightModeSwitchTitle: "切换到暗黑模式",
     darkModeSwitchTitle: "切换到明亮模式",
