@@ -39,7 +39,7 @@ export default defineConfig({
     nav: [
       {
         text: "WorkFlow",
-        items: [{ text: "Vscode配置", link: "/workflow/vscode/setting.html" }],
+        items: [{ text: "Vscode配置", link: "/workflow/vscode/setting" }],
       },
       {
         text: "Cascading Style Sheets",
