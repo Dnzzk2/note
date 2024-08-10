@@ -23,7 +23,7 @@ export default defineConfig({
       provider: "algolia",
       options: {
         appId: "HTWB9AR1CG",
-        apiKey: "09f0b05b5a00a9210f3816abccaad1cf",
+        apiKey: "97863c8fc40e33feb1982826bb59ca85",
         indexName: "dnzzk2",
         placeholder: "请输入关键词",
         translations: {
@@ -39,7 +39,7 @@ export default defineConfig({
     nav: [
       {
         text: "WorkFlow",
-        items: [{ text: "Vscode配置", link: "/workflow/vscode/setting" }],
+        items: [{ text: "Vscode配置", link: "/workflow/vscode/setting.html" }],
       },
       {
         text: "Cascading Style Sheets",
