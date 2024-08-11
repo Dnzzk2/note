@@ -3,13 +3,13 @@ description: 深入解析 React Hooks，包括 useState、useEffect、useLayoutE
 head:
   - - meta
     - name: keywords
-      content: React Hooks, useState, useEffect, useLayoutEffect, useReducer, useRef, useContext, memo, useMemo, useCallback, React 性能优化
+      content: React Hooks, useState, useEffect, useLayoutEffect, useReducer, useRef, useContext, memo, useMemo, useCallback, React 性能优化。
   - - link
     - rel: canonical
       content: https://note.dnzzk2.icu/framework/React/hooks
   - - meta
     - property: og:title
-      content: React 中常见的 Hooks
+      content: React 中常见的 Hooks。
   - - meta
     - property: og:description
       content: 深入解析 React Hooks，包括 useState、useEffect、useLayoutEffect、useReducer、useRef、useContext、memo、useMemo 和 useCallback。学习如何在 React 应用中管理状态、处理副作用和优化性能。
@@ -39,7 +39,7 @@ function Example() {
 }
 ```
 
-初始状态需要复杂计算得到的，可以使用函数来计算初始值:
+初始状态需要复杂计算得到的，可以使用函数来计算初始值：
 
 ```jsx
 const [num, setNum] = useState(() => {
@@ -51,7 +51,7 @@ const [num, setNum] = useState(() => {
 
 ## useEffect
 
-`useEffect` 用于处理副作用，如数据获取、订阅或手动修改 DOM
+`useEffect` 用于处理副作用，如数据获取、订阅或手动修改 DOM。
 
 ```jsx
 useEffect(() => {
@@ -141,7 +141,7 @@ useLayoutEffect(effect, dependencies?)
 
 ## useReducer
 
-`useReducer` 用于管理复杂的状态逻辑，可以在修改值的时候，执行一些固定逻辑
+`useReducer` 用于管理复杂的状态逻辑，可以在修改值的时候，执行一些固定逻辑。
 
 ```tsx
 import { Reducer, useReducer } from "react";
@@ -276,14 +276,14 @@ const MyInput = forwardRef(function MyInput(props, ref) {
 });
 ```
 
-其实是将 MyInput 组件，通过 forwardRef，弄一个新的 MyInput，新的 MyInput，可以将 ref 传递给原来的 MyInput，原来的 MyInput，会在 props 之后收到一个新的参数为 ref，然后我们可以将其传递给需要暴露的 DOM 节点，或者传递到 `useImperativeHandle`
+其实是将 MyInput 组件，通过 forwardRef，弄一个新的 MyInput，新的 MyInput，可以将 ref 传递给原来的 MyInput，原来的 MyInput，会在 props 之后收到一个新的参数为 ref，然后我们可以将其传递给需要暴露的 DOM 节点，或者传递到 `useImperativeHandle`。
 
 详解：[forward — React 中文文档](https://react.docschina.org/reference/react/forwardRef)
 :::
 
 ### **useImperativeHandle**
 
-暴露自定义内容。它有 3 个参数，第一个是传入的 ref，第二个是是返回新的 ref 值的函数，第三个是依赖数组
+暴露自定义内容。它有 3 个参数，第一个是传入的 ref，第二个是返回新的 ref 值的函数，第三个是依赖数组。
 
 ```tsx
 import { useRef } from "react";
@@ -295,7 +295,7 @@ interface RefProps {
   aaa: () => void;
 }
 
-const Guang: React.ForwardRefRenderFunction<RefProps> = (props, ref) => {
+const Dnzzk2: React.ForwardRefRenderFunction<RefProps> = (props, ref) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useImperativeHandle(
@@ -317,7 +317,7 @@ const Guang: React.ForwardRefRenderFunction<RefProps> = (props, ref) => {
   );
 };
 
-const WrapedGuang = React.forwardRef(Guang);
+const WrapedDnzzk2 = React.forwardRef(Dnzzk2);
 
 function App() {
   const ref = useRef<RefProps>(null);
@@ -329,7 +329,7 @@ function App() {
 
   return (
     <div className="App">
-      <WrapedGuang ref={ref} />
+      <WrapedDnzzk2 ref={ref} />
     </div>
   );
 }
@@ -339,7 +339,7 @@ export default App;
 
 ## useContent
 
-跨任意层组件传递数据，我们一般用 Context
+跨任意层组件传递数据，我们一般用 Context。
 
 ```tsx
 import { createContext, useContext } from "react";

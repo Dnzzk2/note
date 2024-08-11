@@ -36,33 +36,33 @@ type ReactNode =
   | boolean
   | null
   | undefined
-  | DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_REACT_NODES[
-    keyof DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_REACT_NODES];
+  | DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_REACT_NODES
+  [keyof DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_REACT_NODES];
 ```
 
-`ReactNode` > `ReactElement` > `JSX.Element`
+`ReactNode` > `ReactElement` > `JSX.Element`。
 
-一般情况下，描述一个 JSX 类型，使用 `React.ReactNode`
+一般情况下，描述一个 JSX 类型，使用 `React.ReactNode`。
 
 ## 函数组件的类型
 
-`React.FunctionComponent` = `FC`
+`React.FunctionComponent` = `FC`。
 
 ## hooks 的类型
 
 ### useState
 
-推导类型或者`useState<Type>()`
+推导类型或者`useState<Type>()`。
 
 ### useRef
 
-- 保存 DOM 引用，参数传 `null`，ref.current 只读
+- 保存 DOM 引用，参数传 `null`，ref.current 只读。
 
 ```tsx
 const ref = useRef<HTMLDivElement>(null);
 ```
 
-- 数据，参数不传 `null`
+- 数据，参数不传 `null`。
 
 ```tsx
 const ref = useRef<{ num: number }>({ num: 1 });
@@ -76,15 +76,15 @@ import { useEffect } from "react";
 import React from "react";
 import { useImperativeHandle } from "react";
 
-interface GuangProps {
+interface Dnzzk2Props {
   name: string;
 }
 
-interface GuangRef {
+interface Dnzzk2Ref {
   aaa: () => void;
 }
 
-const Guang: React.ForwardRefRenderFunction<GuangRef, GuangProps> = (
+const Dnzzk2: React.ForwardRefRenderFunction<Dnzzk2Ref, Dnzzk2Props> = (
   props,
   ref
 ) => {
@@ -110,10 +110,10 @@ const Guang: React.ForwardRefRenderFunction<GuangRef, GuangProps> = (
   );
 };
 
-const WrapedGuang = React.forwardRef(Guang);
+const WrapedDnzzk2 = React.forwardRef(Dnzzk2);
 
 function App() {
-  const ref = useRef<GuangRef>(null);
+  const ref = useRef<Dnzzk2Ref>(null);
 
   useEffect(() => {
     console.log("ref", ref.current);
@@ -122,7 +122,7 @@ function App() {
 
   return (
     <div className="App">
-      <WrapedGuang name="guang" ref={ref} />
+      <WrapedDnzzk2 name="dnzzk2" ref={ref} />
     </div>
   );
 }
@@ -139,9 +139,9 @@ export default App;
 `useImperativeHanlde` 可以有两个类型参数，一个是 ref 内容的类型，一个是 ref 内容扩展后的类型。
 
 ```tsx
-useImperativeHandle < GuangRef,
+useImperativeHandle < Dnzzk2Ref,
   { bbb: string } &&
-    GuangRef >
+    Dnzzk2Ref >
       (ref,
       () => {
         return {

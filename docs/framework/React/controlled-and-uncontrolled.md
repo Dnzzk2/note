@@ -3,7 +3,7 @@ description: "受控模式与非受控模式的区别"
 head:
   - - meta
     - name: keywords
-      content: 受控模式与非受控模式的区别
+      content: 受控模式与非受控模式的区别，前端，React。
   - - link
     - rel: canonical
       content: https://note.dnzzk2.icu/framework/React/controlled-and-uncontrolled

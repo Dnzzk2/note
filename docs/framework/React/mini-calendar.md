@@ -3,16 +3,16 @@ description: "迷你 Calendar"
 head:
   - - meta
     - name: keywords
-      content: 迷你 Calendar
+      content: 迷你 Calendar，前端，手写组件，React。
   - - link
     - rel: canonical
       content: https://note.dnzzk2.icu/framework/React/mini-calendar
   - - meta
     - property: og:title
-      content: 迷你 Calendar
+      content: 迷你 Calendar，使用React手写迷你日历组件。
   - - meta
     - property: og:description
-      content: 迷你 Calendar
+      content: 迷你 Calendar，使用React手写迷你日历组件。
   - - meta
     - property: og:url
       content: https://note.dnzzk2.icu/framework/React/mini-calendar

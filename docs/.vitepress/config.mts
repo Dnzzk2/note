@@ -47,7 +47,10 @@ export default defineConfig({
       },
       {
         text: "框架",
-        items: [{ text: "React", link: "/framework/React/hooks" }],
+        items: [
+          { text: "React", link: "/framework/React/hooks" },
+          { text: "VitePress", link: "/framework/VitePress/configure-algolia" },
+        ],
       },
     ],
     sidebar: {
@@ -89,6 +92,17 @@ export default defineConfig({
             {
               text: "迷你Calendar",
               link: "/framework/React/mini-calendar",
+            },
+          ],
+        },
+      ],
+      "/framework/VitePress": [
+        {
+          text: "VitePress",
+          items: [
+            {
+              text: "Algolia Search",
+              link: "/framework/VitePress/configure-algolia",
             },
           ],
         },
