@@ -8,6 +8,6 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
-    "vue": "^3.4.33"
+    "vue": "^3.4.37"
   }
 }

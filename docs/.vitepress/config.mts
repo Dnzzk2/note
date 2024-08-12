@@ -1,4 +1,8 @@
 import { defineConfig } from "vitepress";
+import head from "./scripts/head";
+import nav from "./scripts/nav";
+import algoliaOptions from "./scripts/algolia";
+import sidebar from "./scripts/sidebar";
 
 export default defineConfig({
   title: "Note",
@@ -6,108 +10,18 @@ export default defineConfig({
   lang: "zh-CN",
   cleanUrls: true,
   lastUpdated: true,
-  head: [
-    ["link", { rel: "icon", href: "/logo.png" }],
-    ["link", { rel: "apple-touch-icon", href: "/logo.png" }],
-    ["meta", { name: "author", content: "Dnzzk2" }],
-    ["meta", { name: "copyright", content: "© 2024 note.dnzzk2.icu" }],
-    ["meta", { property: "og:type", content: "article" }],
-    [
-      "meta",
-      { property: "og:image", content: "https://note.dnzzk2.icu/logo.png" },
-    ],
-    ["meta", { property: "og:site_name", content: "Note" }],
-  ],
+  head: head,
+  vite: {},
   themeConfig: {
     search: {
       provider: "algolia",
-      options: {
-        appId: "HTWB9AR1CG",
-        apiKey: "97863c8fc40e33feb1982826bb59ca85",
-        indexName: "dnzzk2",
-        placeholder: "请输入关键词",
-        translations: {
-          button: {
-            buttonText: "请输入关键词",
-          },
-        },
-      },
+      options: algoliaOptions,
     },
     logo: "/logo.png",
     lightModeSwitchTitle: "切换到暗黑模式",
     darkModeSwitchTitle: "切换到明亮模式",
-    nav: [
-      {
-        text: "WorkFlow",
-        items: [{ text: "Vscode配置", link: "/workflow/vscode/setting" }],
-      },
-      {
-        text: "Cascading Style Sheets",
-        link: "/collection-css/luminous-corner",
-      },
-      {
-        text: "框架",
-        items: [
-          { text: "React", link: "/framework/React/hooks" },
-          { text: "VitePress", link: "/framework/VitePress/configure-algolia" },
-        ],
-      },
-    ],
-    sidebar: {
-      "/collection-css": [
-        {
-          text: "Cascading Style Sheets",
-          items: [
-            { text: "发光边角", link: "/collection-css/luminous-corner" },
-          ],
-        },
-      ],
-      "/workflow": [
-        {
-          text: "Visual Studio Code",
-          items: [
-            {
-              text: "Visual Studio Code 配置",
-              link: "/workflow/vscode/setting",
-            },
-          ],
-        },
-      ],
-      "/framework/React": [
-        {
-          text: "React通关秘籍",
-          items: [
-            {
-              text: "React中常见的Hooks",
-              link: "/framework/React/hooks",
-            },
-            {
-              text: "React中的TypeScript",
-              link: "/framework/React/type-in-react",
-            },
-            {
-              text: "受控与非受控",
-              link: "/framework/React/controlled-and-uncontrolled",
-            },
-            {
-              text: "迷你Calendar",
-              link: "/framework/React/mini-calendar",
-            },
-          ],
-        },
-      ],
-      "/framework/VitePress": [
-        {
-          text: "VitePress",
-          items: [
-            {
-              text: "Algolia Search",
-              link: "/framework/VitePress/configure-algolia",
-            },
-          ],
-        },
-      ],
-    },
+    nav: nav,
+    sidebar: sidebar,
     outline: {
       label: "页面导航",
       level: [2, 3],

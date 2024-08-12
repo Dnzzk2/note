@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "lib": [
+            "ESNext",
+            "DOM"
+        ],
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "jsx": "preserve",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "./*"
+            ]
+        }
+    },
+    "include": [
+        "docs/**/*.ts",
+        "docs/**/*.d.ts",
+        "docs/**/*.tsx",
+        "docs/**/*.vue",
+        "docs/.vitepress/**/*",
+        "docs/**/*.md"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "**/__tests__/*"
+    ]
+}
