@@ -18,6 +18,10 @@ head:
       content: https://note.dnzzk2.icu/framework/React/controlled-and-uncontrolled
 ---
 
+<script setup>
+import ImagePreview from '../../../docs/.vitepress/components/common/ImagePreview.vue'
+</script>
+
 # 受控与非受控
 
 以小见大，先通过表单元素，再去了解组件。
@@ -29,12 +33,12 @@ head:
 `value` 的初始值，可以由代码设置，但是只能通过 `用户的输入` 去改变，代码可以通过 ref 拿到 DOM 或者 onChange 获取 value，并做额外操作，这是 `非受控模式` 。
 
 **非受控模式图解**
-![非受控模式图解](../../img/uncontrolled.png)
+<ImagePreview  src="/img/uncontrolled.png" alt="非受控模式图解"/>
 
 与之相反，`代码` 可以内部自己改变 `value` 的值，这就是 `受控模式` 。
 
 **受控模式图解**
-![受控模式图解](../../img/controlled.png)
+<ImagePreview  src="/img/controlled.png" alt="受控模式图解"/>
 
 ::: tip
 `value` 和 `defaultValue` 是不一样的。 `defaultValue` 只是设置了初始值，不是改变 value。一旦设置了 value，用户的输入不会改变表单的值，但是会触发 onChange 事件，可以通过 onChange 去获得输入的值，然后通过代码去设置表单的值，这就是受控模式。

@@ -2,4 +2,4 @@
 import ImagePreview from '../../../docs/.vitepress/components/common/ImagePreview.vue'
 </script>
 
-<ImagePreview></ImagePreview>
+<ImagePreview src="/img/controlled.png" alt="alt" />
