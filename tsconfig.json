@@ -18,13 +18,10 @@
         "noEmit": true,
         "baseUrl": ".",
         "paths": {
-            "@/*": [
-                "./*"
+            "@": [
+                "./"
             ],
-            "img": [
-                "./docs/img"
-            ]
-        }
+        },
     },
     "include": [
         "docs/**/*.ts",

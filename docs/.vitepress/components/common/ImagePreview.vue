@@ -1,27 +1,40 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import type { CSSProperties } from "vue";
 
 interface Props {
   src: string;
   alt: string;
+  width?: string;
+  style?: CSSProperties;
 }
-const { src, alt } = defineProps<Props>();
+const props = defineProps<Props>();
 
 const isPreview = ref(false);
 
 const openOverlay = () => {
   isPreview.value = true;
+  // 隐藏滚动条-遮罩层全屏，避免滚动条的消失影响内容布局
+  document.body.style.overflow = "hidden";
+  document.body.style.paddingRight = "6px";
 };
 
 const closeOverlay = () => {
   isPreview.value = false;
+  document.body.style.overflow = "";
+  document.body.style.paddingRight = "";
 };
 </script>
 
 <template>
   <!-- 图片本层 -->
   <div class="imgOutBox" @click="openOverlay">
-    <img :src="src" :alt="alt" />
+    <img
+      :src="props.src"
+      :alt="props.alt"
+      :width="props.width"
+      :style="props.style"
+    />
   </div>
   <!-- 预览 -->
   <Teleport to="body">
@@ -42,7 +55,6 @@ const closeOverlay = () => {
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  background-color: #fff;
   cursor: pointer;
   overflow: hidden;
 }
