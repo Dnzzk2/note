@@ -3,6 +3,7 @@ import head from "./scripts/head";
 import nav from "./scripts/nav";
 import algoliaOptions from "./scripts/algolia";
 import sidebar from "./scripts/sidebar";
+import UnoCSS from "unocss/vite";
 
 export default defineConfig({
   title: "Note",
@@ -11,7 +12,9 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   head: head,
-  vite: {},
+  vite: {
+    plugins: [UnoCSS()],
+  },
   themeConfig: {
     search: {
       provider: "algolia",

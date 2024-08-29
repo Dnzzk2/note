@@ -40,6 +40,11 @@ const closeOverlay = () => {
   <Teleport to="body">
     <div v-if="isPreview" class="preview-container">
       <div class="preview-overlay" @click="closeOverlay"></div>
+      <div class="preview-tool">
+        <div class="preview-tool-icon">
+          <div class="i-carbon-rotate-clockwise w-[1em] h-[1em]"></div>
+        </div>
+      </div>
       <div class="preview-wrapper">
         <img :src="src" :alt="alt" class="preview-img" />
       </div>
@@ -79,6 +84,27 @@ const closeOverlay = () => {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.preview-tool {
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 48px;
+  bottom: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-radius: 24px;
+  color: white;
+}
+
+.preview-tool-icon {
+  padding: 0 8px;
+  font-size: 28px;
+  cursor: pointer;
 }
 
 .preview-wrapper {
