@@ -18,6 +18,10 @@ head:
       content: https://note.dnzzk2.icu/framework/React/hooks
 ---
 
+<script setup>
+import ImagePreview from '../../../docs/.vitepress/components/common/ImagePreview.vue'
+</script>
+
 # React 中常见的 Hooks
 
 ## useState
@@ -124,10 +128,10 @@ useLayoutEffect(effect, dependencies?)
 `useLayoutEffect` 在步骤 2 之后，步骤 3 之前同步执行。相比之下，`useEffect` 是在步骤 3 之后异步执行的。
 
 **useEffect 图解**
-![useEffect](../../img/useEffect.png)
+<ImagePreview  src="../../img/useEffect.png" alt="useEffect"/>
 
 **useLayoutEffect 图解**
-![useEffect](../../img/useLayoutEffect.jpg)
+<ImagePreview  src="../../img/useLayoutEffect.png" alt="useLayoutEffect"/>
 
 ### 使用场景
 

@@ -13,6 +13,9 @@ devDependencies:
   '@iconify-json/carbon':
     specifier: ^1.1.37
     version: 1.1.37
+  '@iconify-json/ic':
+    specifier: ^1.1.18
+    version: 1.1.18
   '@unocss/preset-icons':
     specifier: ^0.62.3
     version: 0.62.3
@@ -992,6 +995,12 @@ packages:
 
   /@iconify-json/carbon@1.1.37:
     resolution: {integrity: sha512-Hj9oZtRmN63yt29YovqgqOJQhaoVMNMTkFLT3HKAJm4HjvI405Juez5UfdysYmLjF708U7gJNx4U6K1k5+fTBw==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/ic@1.1.18:
+    resolution: {integrity: sha512-RcfnSFVmQP6aEKQJM3Iczg9e5TXWlN0slIjiyH9l378YkhDPAhXdQ8xP8+tBwfz7B9jysqsV+vs9Iu8DMHvE6Q==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
