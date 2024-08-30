@@ -128,10 +128,10 @@ useLayoutEffect(effect, dependencies?)
 `useLayoutEffect` 在步骤 2 之后，步骤 3 之前同步执行。相比之下，`useEffect` 是在步骤 3 之后异步执行的。
 
 **useEffect 图解**
-<ImagePreview  src="../../img/useEffect.png" alt="useEffect"/>
+<ImagePreview  src="/img/useEffect.png" alt="useEffect"/>
 
 **useLayoutEffect 图解**
-<ImagePreview  src="../../img/useLayoutEffect.png" alt="useLayoutEffect"/>
+<ImagePreview  src="/img/useLayoutEffect.png" alt="useLayoutEffect"/>
 
 ### 使用场景
 

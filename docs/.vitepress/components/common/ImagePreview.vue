@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import type { CSSProperties } from "vue";
+import { withBase } from "vitepress";
 
 interface Props {
   src: string;
@@ -98,7 +99,7 @@ const doubleClick = (e: MouseEvent) => {
   <!-- 图片本层 -->
   <div class="imgOutBox" @click="openOverlay">
     <img
-      :src="props.src"
+      :src="withBase(props.src)"
       :alt="props.alt"
       :width="props.width"
       :style="props.style"
@@ -130,7 +131,7 @@ const doubleClick = (e: MouseEvent) => {
       </div>
       <div class="preview-wrapper">
         <img
-          :src="props.src"
+          :src="withBase(props.src)"
           :alt="props.alt"
           class="preview-img"
           :style="{

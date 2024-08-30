@@ -33,7 +33,6 @@ import ImagePreview from '../../../docs/.vitepress/components/common/ImagePrevie
 `value` 的初始值，可以由代码设置，但是只能通过 `用户的输入` 去改变，代码可以通过 ref 拿到 DOM 或者 onChange 获取 value，并做额外操作，这是 `非受控模式` 。
 
 **非受控模式图解**
-![An image](/img/uncontrolled.png)
 <ImagePreview  src="/img/uncontrolled.png" alt="非受控模式图解" />
 
 与之相反，`代码` 可以内部自己改变 `value` 的值，这就是 `受控模式` 。
