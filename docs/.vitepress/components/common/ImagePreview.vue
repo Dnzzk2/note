@@ -12,7 +12,9 @@ interface Props {
 const props = defineProps<Props>();
 
 const rotation = ref(0);
-const scale = ref(1);
+const scale = ref(0.8);
+const opacity = ref(0);
+const bottom = ref(0);
 const translateX = ref(0);
 const translateY = ref(0);
 const startX = ref(0);
@@ -24,6 +26,11 @@ const overlayVisible = ref(false);
 // 打开
 const openOverlay = () => {
   overlayVisible.value = true;
+  setTimeout(() => {
+    scale.value = 1;
+    opacity.value = 1;
+    bottom.value = 40;
+  }, 0);
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeOverlay();
@@ -35,11 +42,16 @@ const openOverlay = () => {
 
 // 关闭
 const closeOverlay = () => {
-  overlayVisible.value = false;
-  document.body.style.overflow = "";
-  document.body.style.paddingRight = "";
-  rotation.value = 0;
-  scale.value = 1;
+  scale.value = 0.8;
+  opacity.value = 0;
+  bottom.value = 0;
+  // 等待动画执行完毕
+  setTimeout(() => {
+    overlayVisible.value = false;
+    document.body.style.overflow = "";
+    document.body.style.paddingRight = "";
+    rotation.value = 0;
+  }, 160);
 };
 
 // 旋转图片
@@ -82,6 +94,10 @@ const mouseMove = (e: MouseEvent) => {
 // 鼠标松开
 const mouseUp = (e: MouseEvent) => {
   isDrag.value = false;
+  translateX.value = 0;
+  translateY.value = 0;
+  startX.value = 0;
+  startY.value = 0;
   window.removeEventListener("mousemove", mouseMove);
   window.removeEventListener("mouseup", mouseUp);
 };
@@ -102,45 +118,58 @@ const doubleClick = () => {
     />
   </div>
   <Teleport to="body">
-    <transition name="overlay-fade">
-      <div v-if="overlayVisible" class="preview-container">
-        <div class="preview-overlay" @click="closeOverlay"></div>
-        <div class="preview-tool">
-          <div class="preview-tool-icon" @click="rotateImage(-90)">
-            <i class="i-ic:outline-rotate-90-degrees-ccw"></i>
-          </div>
-          <div class="preview-tool-icon" @click="rotateImage(90)">
-            <i class="i-ic:outline-rotate-90-degrees-cw"></i>
-          </div>
-          <div class="preview-tool-icon" @click="zoom">
-            <i class="i-ic:outline-center-focus-weak"></i>
-          </div>
-          <div class="preview-tool-icon" @click="zoomIn">
-            <i class="i-ic:outline-add-circle-outline"></i>
-          </div>
-          <div class="preview-tool-icon" @click="zoomOut">
-            <i class="i-ic:outline-remove-circle-outline"></i>
-          </div>
-          <div class="preview-tool-icon" @click="closeOverlay">
-            <i class="i-ic:outline-close"></i>
-          </div>
+    <div v-if="overlayVisible" class="preview-container">
+      <div
+        class="preview-overlay"
+        @click="closeOverlay"
+        :style="{
+          opacity: opacity,
+          transition: 'opacity 0.3s ease',
+        }"
+      ></div>
+      <div
+        class="preview-tool"
+        :style="{
+          opacity: opacity,
+          transition: 'all 0.3s ease',
+          bottom: `${bottom}px`,
+        }"
+      >
+        <div class="preview-tool-icon" @click="rotateImage(-90)">
+          <i class="i-ic:outline-rotate-90-degrees-ccw"></i>
         </div>
-        <div class="preview-wrapper">
-          <img
-            :src="withBase(props.src)"
-            :alt="props.alt"
-            class="preview-img"
-            :style="{
-              transform: `translate(${translateX}px, ${translateY}px) rotate(${rotation}deg) scale(${scale})`,
-              transition: isDrag ? 'none' : 'all 0.3s ease',
-            }"
-            draggable="false"
-            @mousedown="mouseDown"
-            @dblclick="doubleClick"
-          />
+        <div class="preview-tool-icon" @click="rotateImage(90)">
+          <i class="i-ic:outline-rotate-90-degrees-cw"></i>
+        </div>
+        <div class="preview-tool-icon" @click="zoom">
+          <i class="i-ic:outline-center-focus-weak"></i>
+        </div>
+        <div class="preview-tool-icon" @click="zoomIn">
+          <i class="i-ic:outline-add-circle-outline"></i>
+        </div>
+        <div class="preview-tool-icon" @click="zoomOut">
+          <i class="i-ic:outline-remove-circle-outline"></i>
+        </div>
+        <div class="preview-tool-icon" @click="closeOverlay">
+          <i class="i-ic:outline-close"></i>
         </div>
       </div>
-    </transition>
+      <div class="preview-wrapper">
+        <img
+          :src="withBase(props.src)"
+          :alt="props.alt"
+          class="preview-img"
+          :style="{
+            transform: `translate(${translateX}px, ${translateY}px) rotate(${rotation}deg) scale(${scale}) `,
+            opacity: opacity,
+            transition: isDrag ? 'none' : 'all 0.3s ease',
+          }"
+          draggable="false"
+          @mousedown="mouseDown"
+          @dblclick="doubleClick"
+        />
+      </div>
+    </div>
   </Teleport>
 </template>
 
@@ -184,7 +213,6 @@ const doubleClick = () => {
   left: 50%;
   transform: translateX(-50%);
   height: 48px;
-  bottom: 40px;
   padding: 0 12px;
   display: flex;
   align-items: center;
@@ -217,18 +245,6 @@ const doubleClick = () => {
   -webkit-user-select: none;
   max-height: calc(100vh - 32px);
   max-width: calc(100vw - 32px);
-  overflow-clip-margin: content-box;
-  overflow: clip;
   transform-origin: center center;
-}
-
-.overlay-fade-enter-active,
-.overlay-fade-leave-active {
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.overlay-fade-enter-from,
-.overlay-fade-leave-to {
-  opacity: 0;
-  transform: scale(0.8);
 }
 </style>
