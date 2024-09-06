@@ -11,30 +11,47 @@ interface Props {
 }
 const props = defineProps<Props>();
 
-const isPreview = ref(false);
 const rotation = ref(0);
-const scale = ref(1);
+const scale = ref(0.8);
+const opacity = ref(0);
+const bottom = ref(0);
 const translateX = ref(0);
 const translateY = ref(0);
 const startX = ref(0);
 const startY = ref(0);
 const isDrag = ref(false);
 
+const overlayVisible = ref(false);
+
 // 打开
 const openOverlay = () => {
-  isPreview.value = true;
-  // 隐藏滚动条-遮罩层全屏，避免滚动条的消失影响内容布局
+  overlayVisible.value = true;
+  setTimeout(() => {
+    scale.value = 1;
+    opacity.value = 1;
+    bottom.value = 40;
+  }, 0);
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeOverlay();
+    }
+  });
   document.body.style.overflow = "hidden";
   document.body.style.paddingRight = "6px";
 };
 
 // 关闭
 const closeOverlay = () => {
-  isPreview.value = false;
-  document.body.style.overflow = "";
-  document.body.style.paddingRight = "";
-  rotation.value = 0;
-  scale.value = 1;
+  scale.value = 0.8;
+  opacity.value = 0;
+  bottom.value = 0;
+  // 等待动画执行完毕
+  setTimeout(() => {
+    overlayVisible.value = false;
+    document.body.style.overflow = "";
+    document.body.style.paddingRight = "";
+    rotation.value = 0;
+  }, 160);
 };
 
 // 旋转图片
@@ -44,12 +61,12 @@ const rotateImage = (deg: number) => {
 
 // 放大
 const zoomIn = () => {
-  scale.value = Math.min(scale.value + 0.1, 3); // 每次放大 0.1 倍，最大放大 3 倍
+  scale.value = Math.min(scale.value + 0.1, 3);
 };
 
 // 缩小
 const zoomOut = () => {
-  scale.value = Math.max(scale.value - 0.1, 0.5); // 每次缩小 0.1 倍，最小缩小到 0.5 倍
+  scale.value = Math.max(scale.value - 0.1, 0.5);
 };
 
 // 还原
@@ -86,17 +103,12 @@ const mouseUp = (e: MouseEvent) => {
 };
 
 // 双击放大和还原
-const doubleClick = (e: MouseEvent) => {
-  if (scale.value === 1) {
-    scale.value = 1.5;
-  } else {
-    scale.value = 1;
-  }
+const doubleClick = () => {
+  scale.value = scale.value === 1 ? 1.5 : 1;
 };
 </script>
 
 <template>
-  <!-- 图片本层 -->
   <div class="imgOutBox" @click="openOverlay">
     <img
       :src="withBase(props.src)"
@@ -105,11 +117,24 @@ const doubleClick = (e: MouseEvent) => {
       :style="props.style"
     />
   </div>
-  <!-- 预览 -->
   <Teleport to="body">
-    <div v-if="isPreview" class="preview-container">
-      <div class="preview-overlay" @click="closeOverlay"></div>
-      <div class="preview-tool">
+    <div v-if="overlayVisible" class="preview-container">
+      <div
+        class="preview-overlay"
+        @click="closeOverlay"
+        :style="{
+          opacity: opacity,
+          transition: 'opacity 0.3s ease',
+        }"
+      ></div>
+      <div
+        class="preview-tool"
+        :style="{
+          opacity: opacity,
+          transition: 'all 0.3s ease',
+          bottom: `${bottom}px`,
+        }"
+      >
         <div class="preview-tool-icon" @click="rotateImage(-90)">
           <i class="i-ic:outline-rotate-90-degrees-ccw"></i>
         </div>
@@ -135,7 +160,8 @@ const doubleClick = (e: MouseEvent) => {
           :alt="props.alt"
           class="preview-img"
           :style="{
-            transform: ` translate(${translateX}px, ${translateY}px) rotate(${rotation}deg) scale(${scale}) `,
+            transform: `translate(${translateX}px, ${translateY}px) rotate(${rotation}deg) scale(${scale}) `,
+            opacity: opacity,
             transition: isDrag ? 'none' : 'all 0.3s ease',
           }"
           draggable="false"
@@ -187,7 +213,6 @@ const doubleClick = (e: MouseEvent) => {
   left: 50%;
   transform: translateX(-50%);
   height: 48px;
-  bottom: 40px;
   padding: 0 12px;
   display: flex;
   align-items: center;
@@ -220,8 +245,6 @@ const doubleClick = (e: MouseEvent) => {
   -webkit-user-select: none;
   max-height: calc(100vh - 32px);
   max-width: calc(100vw - 32px);
-  overflow-clip-margin: content-box;
-  overflow: clip;
   transform-origin: center center;
 }
 </style>

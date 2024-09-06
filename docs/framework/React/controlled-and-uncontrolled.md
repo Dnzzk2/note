@@ -18,10 +18,6 @@ head:
       content: https://note.dnzzk2.icu/framework/React/controlled-and-uncontrolled
 ---
 
-<script setup>
-import ImagePreview from '../../../docs/.vitepress/components/common/ImagePreview.vue'
-</script>
-
 # 受控与非受控
 
 以小见大，先通过表单元素，再去了解组件。

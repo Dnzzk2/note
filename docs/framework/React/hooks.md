@@ -18,10 +18,6 @@ head:
       content: https://note.dnzzk2.icu/framework/React/hooks
 ---
 
-<script setup>
-import ImagePreview from '../../../docs/.vitepress/components/common/ImagePreview.vue'
-</script>
-
 # React 中常见的 Hooks
 
 ## useState
