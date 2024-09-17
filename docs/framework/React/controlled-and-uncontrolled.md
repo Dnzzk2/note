@@ -269,5 +269,13 @@ export default App;
 ::: tip
 过程：
 
-组件初始化，执行一次 useState 内部的回调函数，通过 useRef 记录是否第一次渲染，避免在 useEffect 中，再次 setValue，导致 defaultValue 被覆盖(当 propsValue 为 undefined 时)。当 propsValue 有值的时候，是受控模式，mergedValue 展示的是 propsValue 的值，如果这个时候 propsValue 在组件外部被设置成 undefined（移除 value 属性，或者设置值为 undefined），那么 mergedValue 的值就会变成组件内部的 value，组件内部的 value，在初始化的时候就已经设置好了，展示的也是这个值，这明显不符合组件逻辑，所以我们需要重置 value，所以在 useEffect 中，如果 propsValue 为 undefined 且不是初次渲染，则重置 value。
+1、组件初始化时，useState 的回调函数会执行一次，返回 `propsValue` 或 `defaultValue`（优先使用 `propsValue`，如果未提供则使用 `defaultValue`）。
+
+2、useRef 用来跟踪是否是组件的第一次渲染，它在 useEffect 中起到了避免重复调用 setValue 的作用。这个作用是防止 useEffect 中由于 `propsValue` 为 `undefined` 而不小心覆盖组件内部状态 value 的情况。
+
+3、受控模式：当 `propsValue` 有值时，组件处于受控模式，mergedValue 会展示 `propsValue`。此时，`propsValue` 的改变会直接影响组件显示的日期。
+
+4、非受控模式：当外部将 `propsValue` 移除或设置为 `undefined` 时，mergedValue 会展示组件内部的 value，这个 value 是在初始化时根据 `defaultValue` 或 `propsValue` 设置的。这是组件进入非受控模式的过程。
+
+5、useEffect 的作用：为了确保组件逻辑的正确性，当 `propsValue` 变为 `undefined` 且不是第一次渲染时，useEffect 会重置内部的 value，避免在非受控模式下展示不一致的值。
 :::
