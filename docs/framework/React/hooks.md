@@ -49,6 +49,10 @@ const [num, setNum] = useState(() => {
 });
 ```
 
+::: tip
+`useState` 会在第一次渲染的时候，缓存初始值，后续组件重新渲染，也不会更新值，除非是用 set 去更新。
+:::
+
 ## useEffect
 
 `useEffect` 用于处理副作用，如数据获取、订阅或手动修改 DOM。
