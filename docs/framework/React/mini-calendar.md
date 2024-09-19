@@ -46,7 +46,7 @@ new Date(2024, 7, 0).getMonth();
 
 ## 基础布局
 
-App.tsx
+### App.tsx
 
 ```tsx
 import React from "react";
@@ -109,7 +109,7 @@ function Calendar() {
 export default Calendar;
 ```
 
-styles.css
+### styles.css
 
 ```css
 .calendar {

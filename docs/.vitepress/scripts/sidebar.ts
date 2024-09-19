@@ -38,6 +38,10 @@ const sidebar: DefaultTheme.Sidebar = {
           text: "迷你Calendar",
           link: "/framework/React/mini-calendar",
         },
+        {
+          text: "Calendar日历",
+          link: "/framework/React/calendar",
+        },
       ],
     },
   ],
