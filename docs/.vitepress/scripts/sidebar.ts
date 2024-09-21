@@ -18,33 +18,7 @@ const sidebar: DefaultTheme.Sidebar = {
       ],
     },
   ],
-  "/framework/React": [
-    {
-      text: "React通关秘籍",
-      items: [
-        {
-          text: "React中常见的Hooks",
-          link: "/framework/React/hooks",
-        },
-        {
-          text: "React中的TypeScript",
-          link: "/framework/React/type-in-react",
-        },
-        {
-          text: "受控与非受控",
-          link: "/framework/React/controlled-and-uncontrolled",
-        },
-        {
-          text: "迷你Calendar",
-          link: "/framework/React/mini-calendar",
-        },
-        {
-          text: "Calendar日历",
-          link: "/framework/React/calendar",
-        },
-      ],
-    },
-  ],
+  "/framework/React": [],
   "/framework/VitePress": [
     {
       text: "VitePress",

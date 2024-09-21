@@ -12,8 +12,6 @@ const nav: DefaultTheme.NavItem[] = [
   {
     text: "框架",
     items: [
-      { text: "React", link: "/framework/React/hooks" },
-      { text: "Vue", link: "/framework/Vue/comp" },
       { text: "VitePress", link: "/framework/VitePress/configure-algolia" },
     ],
   },
