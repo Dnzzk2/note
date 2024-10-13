@@ -6,13 +6,14 @@ const nav: DefaultTheme.NavItem[] = [
     items: [{ text: "Vscode配置", link: "/workflow/vscode/setting" }],
   },
   {
-    text: "Cascading Style Sheets",
+    text: "CSS",
     link: "/collection-css/luminous-corner",
   },
   {
     text: "框架",
     items: [
       { text: "VitePress", link: "/framework/VitePress/configure-algolia" },
+      { text: "React", link: "/framework/React/1.React 中常见的 Hooks" },
     ],
   },
 ];

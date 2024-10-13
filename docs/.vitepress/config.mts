@@ -34,7 +34,8 @@ export default defineConfig({
     ],
     footer: {
       message: "Crafted with care.",
-      copyright: "Copyright © 2024-present Dnzzk2",
+      copyright:
+        "Copyright © 2024-present <a href='https://www.dnzzk2.icu' target='_blank' >Dnzzk2</a>",
     },
     lastUpdated: {
       text: "最后更新于",

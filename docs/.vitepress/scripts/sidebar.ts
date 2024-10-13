@@ -3,7 +3,7 @@ import type { DefaultTheme } from "vitepress";
 const sidebar: DefaultTheme.Sidebar = {
   "/collection-css": [
     {
-      text: "Cascading Style Sheets",
+      text: "CSS动画",
       items: [{ text: "发光边角", link: "/collection-css/luminous-corner" }],
     },
   ],
@@ -18,7 +18,25 @@ const sidebar: DefaultTheme.Sidebar = {
       ],
     },
   ],
-  "/framework/React": [],
+  "/framework/React": [
+    {
+      text: "React",
+      items: [
+        {
+          text: "React 中常见的 Hooks",
+          link: "/framework/React/1.React 中常见的 Hooks",
+        },
+        {
+          text: "React 中的 TypeScript 类型",
+          link: "/framework/React/2.React 中的 TypeScript 类型",
+        },
+        {
+          text: "受控与非受控",
+          link: "/framework/React/3.受控与非受控",
+        },
+      ],
+    },
+  ],
   "/framework/VitePress": [
     {
       text: "VitePress",

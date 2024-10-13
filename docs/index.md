@@ -1,7 +1,7 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
-footer: false
+footer: true
 
 hero:
   name: "Note"

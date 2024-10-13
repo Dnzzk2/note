@@ -66,7 +66,7 @@ export default defineConfig({
 
 过段时间，申请成功，我们会收到另一封邮件。
 
-<ImagePreview src="/img/email.png" alt="密钥email" />
+<ImagePreview src="/img/email.jpg" alt="密钥email" />
 
 点击 <u>_Accept this invitation to join your application and get started!_</u>
 
@@ -78,7 +78,7 @@ export default defineConfig({
 
 ## 配置 Key
 
-<ImagePreview src="/img/workBench.png" alt="workBench" />
+<ImagePreview src="/img/workBench.jpg" alt="workBench" />
 
 在控制台页面，我们可以获取 `Application ID`、`Search API Key`。
 
@@ -96,7 +96,7 @@ export default defineConfig({
 
 Algolia 需要检索我们的网站数据并返回给我们搜索结果，我们之前的设置中并没有让 Algolia 获得我们的网络数据，因此我们需要使用爬虫让 Algolia 爬取。
 
-<ImagePreview src="/img/workBench.png" alt="workBench" />
+<ImagePreview src="/img/workBench.jpg" alt="workBench" />
 
 在工作台中，点击 <u>Go To Crawler</u>。跳转至 `Crawler` ，一款 Algolia 官方的爬虫工具。
 
