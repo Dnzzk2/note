@@ -29,7 +29,7 @@
         "docs/**/*.tsx",
         "docs/**/*.vue",
         "docs/.vitepress/**/*",
-        "docs/**/*.md"
+        "docs/**/*.md",
     ],
     "exclude": [
         "node_modules",

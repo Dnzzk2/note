@@ -1,10 +1,15 @@
 import type { DefaultTheme } from "vitepress";
 
 const sidebar: DefaultTheme.Sidebar = {
-  "/collection-css": [
+  "/css": [
     {
-      text: "CSS动画",
-      items: [{ text: "发光边角", link: "/collection-css/luminous-corner" }],
+      text: "CSS属性详解",
+      items: [
+        {
+          text: "flex 和 inline-flex 的区别",
+          link: "/css/flex 和 inline-flex",
+        },
+      ],
     },
   ],
   "/workflow": [

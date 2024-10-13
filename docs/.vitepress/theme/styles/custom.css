@@ -8,6 +8,9 @@
     #00ff00
   );
   --vp-home-hero-image-filter: blur(44px);
+  /* 字体 */
+  --vp-font-family-base: "PingFang SC", "Microsoft Yahei", "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
 
   /* index Logo 大小 */
   .image-bg {

@@ -7,7 +7,7 @@ const nav: DefaultTheme.NavItem[] = [
   },
   {
     text: "CSS",
-    link: "/collection-css/luminous-corner",
+    link: "/css/flex 和 inline-flex",
   },
   {
     text: "框架",
