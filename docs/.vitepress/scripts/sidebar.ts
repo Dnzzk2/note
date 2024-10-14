@@ -3,11 +3,11 @@ import type { DefaultTheme } from "vitepress";
 const sidebar: DefaultTheme.Sidebar = {
   "/css": [
     {
-      text: "CSS属性详解",
+      text: "CSS属性",
       items: [
         {
-          text: "flex 和 inline-flex 的区别",
-          link: "/css/flex 和 inline-flex",
+          text: "Flex 和 inline-flex 的区别",
+          link: "/css/Flex 和 inline-flex",
         },
       ],
     },

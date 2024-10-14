@@ -1,0 +1,11 @@
+:root {
+  --template-bg-color: #f0f0f0;
+  --template-item-bg-color: #e0e0e0;
+  --template-text-color: #333;
+}
+
+.dark {
+  --template-bg-color: #333;
+  --template-item-bg-color: #444;
+  --template-text-color: #f0f0f0;
+}

@@ -7,7 +7,7 @@ const nav: DefaultTheme.NavItem[] = [
   },
   {
     text: "CSS",
-    link: "/css/flex 和 inline-flex",
+    link: "/css/Flex 和 inline-flex",
   },
   {
     text: "框架",
