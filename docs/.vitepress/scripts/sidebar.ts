@@ -1,13 +1,13 @@
 import type { DefaultTheme } from "vitepress";
 
 const sidebar: DefaultTheme.Sidebar = {
-  "/css": [
+  "/Cascading-Style-Sheets": [
     {
       text: "CSS属性",
       items: [
         {
           text: "Flex 和 inline-flex 的区别",
-          link: "/css/Flex 和 inline-flex",
+          link: "/Cascading-Style-Sheets/Flex和inline-flex",
         },
       ],
     },
