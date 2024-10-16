@@ -12,6 +12,12 @@
   --vp-font-family-base: "PingFang SC", "Microsoft Yahei", "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
 
+  /* Code 字体 */
+  code {
+    font-family: "Fira Code Retina", ui-monospace, "Menlo", "Monaco", "Consolas",
+      "Liberation Mono", "Courier New", monospace; /* 替换为你想要的字体 */
+  }
+
   /* index Logo 大小 */
   .image-bg {
     width: 170px;

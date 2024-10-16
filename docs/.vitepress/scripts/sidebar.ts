@@ -51,6 +51,10 @@ const sidebar: DefaultTheme.Sidebar = {
           text: "受控与非受控",
           link: "/framework/React/3.受控与非受控",
         },
+        {
+          text: "Suspense 和 ErrorBoundary",
+          link: "/framework/React/4.Suspense 和 ErrorBoundary",
+        },
       ],
     },
   ],
