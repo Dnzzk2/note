@@ -1,6 +1,18 @@
 import type { DefaultTheme } from "vitepress";
 
 const sidebar: DefaultTheme.Sidebar = {
+  "/AI": [
+    {
+      text: "AI Prompt",
+      items: [
+        {
+          text: "Cursor Prompt",
+          link: "/AI/cusror-prompt",
+        },
+      ],
+    },
+  ],
+
   "/Cascading-Style-Sheets": [
     {
       text: "CSS属性",

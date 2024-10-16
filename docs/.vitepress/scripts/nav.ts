@@ -2,8 +2,12 @@ import type { DefaultTheme } from "vitepress";
 
 const nav: DefaultTheme.NavItem[] = [
   {
+    text: "AI",
+    link: "/AI/cusror-prompt",
+  },
+  {
     text: "WorkFlow",
-    items: [{ text: "Vscode配置", link: "/workflow/vscode/setting" }],
+    link: "/workflow/vscode/setting",
   },
   {
     text: "CSS",
