@@ -55,6 +55,10 @@ const sidebar: DefaultTheme.Sidebar = {
           text: "Suspense 和 ErrorBoundary",
           link: "/framework/React/4.Suspense 和 ErrorBoundary",
         },
+        {
+          text: "React.Children API",
+          link: "/framework/React/5.React.Children API",
+        },
       ],
     },
   ],
