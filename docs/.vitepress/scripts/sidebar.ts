@@ -59,6 +59,10 @@ const sidebar: DefaultTheme.Sidebar = {
           text: "React.Children API",
           link: "/framework/React/5.React.Children API",
         },
+        {
+          text: "封装三个简单 API",
+          link: "/framework/React/6.封装三个简单 API",
+        },
       ],
     },
   ],
