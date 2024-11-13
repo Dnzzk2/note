@@ -59,6 +59,10 @@ const sidebar: DefaultTheme.Sidebar = {
           text: "React.Children API",
           link: "/framework/React/5.React.Children API",
         },
+        {
+          text: "React-lazyload",
+          link: "/framework/React/6.React-lazyload",
+        },
       ],
     },
   ],
