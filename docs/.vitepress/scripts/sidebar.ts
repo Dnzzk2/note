@@ -60,6 +60,10 @@ const sidebar: DefaultTheme.Sidebar = {
           link: "/framework/React/5.React.Children API",
         },
         {
+          text: "封装三个简单 API",
+          link: "/framework/React/6.封装三个简单 API",
+        },
+        {
           text: "React-lazyload",
           link: "/framework/React/6.React-lazyload",
         },
