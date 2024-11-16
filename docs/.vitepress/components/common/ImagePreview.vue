@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import type { CSSProperties } from "vue";
-import { withBase } from "vitepress";
+import { useData, withBase } from "vitepress";
 
 interface Props {
   src: string;
@@ -22,6 +22,8 @@ const startY = ref(0);
 const isDrag = ref(false);
 
 const overlayVisible = ref(false);
+
+const { isDark } = useData();
 
 // 打开
 const openOverlay = () => {
@@ -109,7 +111,11 @@ const doubleClick = () => {
 </script>
 
 <template>
-  <div class="imgOutBox" @click="openOverlay">
+  <div
+    class="imgOutBox"
+    @click="openOverlay"
+    :style="isDark ? { filter: 'brightness(0.9) contrast(0.9)' } : {}"
+  >
     <img
       :src="withBase(props.src)"
       :alt="props.alt"
@@ -183,6 +189,12 @@ const doubleClick = () => {
   border-radius: 8px;
   cursor: pointer;
   overflow: hidden;
+  transition: filter 0.3s ease; /* 添加过渡效果 */
+}
+
+/* 添加hover效果 */
+.imgOutBox:hover {
+  filter: none !important;
 }
 
 .preview-container {

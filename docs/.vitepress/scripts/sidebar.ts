@@ -67,6 +67,10 @@ const sidebar: DefaultTheme.Sidebar = {
           text: "React-lazyload",
           link: "/framework/React/6.React-lazyload",
         },
+        {
+          text: "图解网页的距离",
+          link: "/framework/React/7.图解网页的距离",
+        },
       ],
     },
   ],
