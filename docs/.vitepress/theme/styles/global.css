@@ -12,6 +12,7 @@
   background-color: #a9acaf;
 }
 
-html {
+/* 移除平滑滚动，以确保懒加载正常工作 */
+/* html {
   scroll-behavior: smooth;
-}
+} */

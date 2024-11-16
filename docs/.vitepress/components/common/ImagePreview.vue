@@ -121,6 +121,7 @@ const doubleClick = () => {
       :alt="props.alt"
       :width="props.width"
       :style="props.style"
+      loading="lazy"
     />
   </div>
   <Teleport to="body">
