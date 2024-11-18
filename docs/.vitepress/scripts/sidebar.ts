@@ -85,6 +85,17 @@ const sidebar: DefaultTheme.Sidebar = {
       ],
     },
   ],
+  "/framework/Nest": [
+    {
+      text: "Nest",
+      items: [
+        {
+          text: "Nest 基础概念",
+          link: "/framework/Nest/1.Nest 基础概念",
+        },
+      ],
+    },
+  ],
 };
 
 export default sidebar;
