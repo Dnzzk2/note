@@ -64,12 +64,12 @@ const sidebar: DefaultTheme.Sidebar = {
           link: "/framework/React/6.封装三个 API",
         },
         {
-          text: "React-lazyload",
-          link: "/framework/React/6.React-lazyload",
-        },
-        {
           text: "网页中的距离",
           link: "/framework/React/7.网页中的距离",
+        },
+        {
+          text: "React-lazyload",
+          link: "/framework/React/8.React-lazyload",
         },
       ],
     },
