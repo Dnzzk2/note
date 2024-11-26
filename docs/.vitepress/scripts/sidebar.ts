@@ -18,8 +18,17 @@ const sidebar: DefaultTheme.Sidebar = {
       text: "CSS属性",
       items: [
         {
-          text: "Flex 和 inline-flex 的区别",
-          link: "/Cascading-Style-Sheets/Flex和inline-flex",
+          text: "CSS 中的 flex 和 inline-flex",
+          link: "/Cascading-Style-Sheets/attributes/Flex和inline-flex",
+        },
+      ],
+    },
+    {
+      text: "CSS In JS",
+      items: [
+        {
+          text: "掌握 styled-components",
+          link: "/Cascading-Style-Sheets/CSS-in-js/styled-components",
         },
       ],
     },

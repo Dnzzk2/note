@@ -11,7 +11,7 @@ const nav: DefaultTheme.NavItem[] = [
   },
   {
     text: "CSS",
-    link: "/Cascading-Style-Sheets/Flex和inline-flex",
+    link: "/Cascading-Style-Sheets/attributes/Flex和inline-flex",
   },
   {
     text: "框架",

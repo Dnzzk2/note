@@ -1,4 +1,4 @@
-# Flex 和 inline-flex 的区别
+# CSS 中的 flex 和 inline-flex
 
 `display:flex` 和 `display:inline-flex` 都是用于生成弹性盒子布局，只是生成的盒子布局**特性不同**。
 
