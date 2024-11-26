@@ -24,7 +24,7 @@ const sidebar: DefaultTheme.Sidebar = {
       ],
     },
     {
-      text: "CSS In JS",
+      text: "CSS-in-JS",
       items: [
         {
           text: "掌握 styled-components",
