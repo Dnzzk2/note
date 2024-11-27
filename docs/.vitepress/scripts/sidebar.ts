@@ -32,6 +32,10 @@ const sidebar: DefaultTheme.Sidebar = {
         },
       ],
     },
+    {
+      text: "CSS Modules",
+      link: "/Cascading-Style-Sheets/css-modules",
+    },
   ],
   "/workflow": [
     {
