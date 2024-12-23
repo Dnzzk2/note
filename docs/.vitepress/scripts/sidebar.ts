@@ -15,7 +15,7 @@ const sidebar: DefaultTheme.Sidebar = {
 
   "/Cascading-Style-Sheets": [
     {
-      text: "CSS属性",
+      text: "CSS 属性",
       items: [
         {
           text: "CSS 中的 flex 和 inline-flex",
