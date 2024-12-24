@@ -15,7 +15,7 @@ const nav: DefaultTheme.NavItem[] = [
       { text: "VitePress", link: "/framework/VitePress/configure-algolia" },
       { text: "React", link: "/framework/React/1.React 中常见的 Hooks" },
       { text: "Nest", link: "/framework/Nest/1.Nest 基础概念" },
-      { text: "CSS", link: "/framework/CSS/attributes/Flex和inline-flex" },
+      { text: "CSS", link: "/Cascading-Style-Sheets/attributes/Flex和inline-flex" },
     ],
   },
 ];
